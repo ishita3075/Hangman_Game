@@ -5,8 +5,14 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+
+/**
+ * Provides utility methods for image loading, font creation,
+ * and word masking used in the Hangman game.
+ */
 public class CustomTools {
-    // create a JLabel with an image
+
+    // Loads an image from the given resource path
     public static JLabel loadImage(String resource){
         BufferedImage image;
         try{
@@ -18,6 +24,8 @@ public class CustomTools {
         }
         return null;
     }
+
+    // Updates the icon of an existing JLabel with a new image
     public static void updateImage(JLabel imageContainer, String resource){
         BufferedImage image;
         try{
@@ -28,27 +36,29 @@ public class CustomTools {
             System.out.println("Error: " + e);
         }
     }
+
+    // Creates and returns a custom font from the provided resource path
     public static Font createFont(String resource){
-        // get font file path
+        // Get font file path
         String filePath = CustomTools.class.getClassLoader().getResource(resource).getPath();
-        // check for empty spaces in path (bug)
+        // Fix file path spaces
         if(filePath.contains("%20")){
             filePath = filePath.replaceAll("%20", " ");
         }
-        // create font
         try{
             File customFontFile = new File(filePath);
-            Font customFont = Font.createFont(Font.TRUETYPE_FONT, customFontFile);
-            return customFont;
+            return Font.createFont(Font.TRUETYPE_FONT, customFontFile);
         }catch(Exception e){
             System.out.println("Error: " + e);
         }
         return null;
     }
+
+    // Returns the word in a hidden form using asterisks (*), preserving spaces
     public static String hideWords(String word){
         String hiddenWord = "";
         for(int i = 0; i < word.length(); i++){
-            if(!(word.charAt(i) == ' ')){
+            if(word.charAt(i) != ' '){
                 hiddenWord += "*";
             }else{
                 hiddenWord += " ";
