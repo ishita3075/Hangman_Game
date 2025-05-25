@@ -1,10 +1,21 @@
 import java.awt.*;
+/**
+ * Defines shared constants for file paths, colors, and UI dimensions
+ * used across the Hangman game for consistency and easy maintenance.
+ */
+
 public class CommonConstants {
-    // file paths
+
+    // Path to the data file
+
+    //Path to the data file that contains categories and words
     public static final String DATA_PATH = "resources/data.txt";
+    //Path to the hangman image which is being used in GUI
     public static final String IMAGE_PATH = "resources/1.png";
+    //Path to the custom font used in the GUI
     public static final String FONT_PATH = "resources/Cartoonero.ttf";
-    // color config
+
+    // Color config
     public static final Color PRIMARY_COLOR = Color.decode("#14212D");
     public static final Color SECONDARY_COLOR = Color.decode("#FCA311");
     public static final Color BACKGROUND_COLOR = Color.decode("#101820");
