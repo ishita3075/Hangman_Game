@@ -1,4 +1,8 @@
-animals,Lion,Zebra,Elephant,Bird,Tiger,Panda,Komodo Dragon
-sports,Basketball,Soccer,Football,Badminton,Volleyball,Golf,
-fruits,Banana,Orange,Apple,Strawberry,Mango,Tomato,
-anime, Naruto, One Piece, Dragon Ball Z
+animals, Lion, Zebra, Elephant, Bird, Tiger, Panda, Komodo Dragon, Cheetah, Kangaroo, Giraffe, Hippo, Dolphin, Wolf, Owl, Eagle, Crocodile, Gorilla, Chimpanzee, Rhinoceros, Koala, Fox, Leopard, Bison, Buffalo, Deer  
+sports, Basketball, Soccer, Football, Badminton, Volleyball, Golf, Tennis, Cricket, Table Tennis, Hockey, Wrestling, Baseball, Rugby, Marathon, Swimming, Cycling, Ice Skating, Archery, Gymnastics, Chess, Skiing, Boxing  
+fruits, Banana, Orange, Apple, Strawberry, Mango, Tomato, Pineapple, Watermelon, Blueberry, Raspberry, Grapes, Kiwi, Papaya, Peach, Pear, Coconut, Lemon, Pomegranate, Fig, Date, Avocado, Guava  
+anime, Naruto, One Piece, Dragon Ball Z, Attack on Titan, Death Note, Demon Slayer, Hunter x Hunter, Fullmetal Alchemist, My Hero Academia, Bleach, Jujutsu Kaisen, Tokyo Ghoul, Black Clover, Re Zero, Fairy Tail, Cowboy Bebop, Steins Gate, Sword Art Online, Vinland Saga, Code Geass  
+colors, Red, Blue, Green, Yellow, Orange, Purple, Black, White, Pink, Cyan, Magenta, Brown, Grey, Turquoise, Maroon, Teal, Olive, Beige, Indigo  
+vehicles, Car, Bike, Bus, Truck, Train, Airplane, Ship, Yacht, Scooter, Submarine, Helicopter, Tram, Motorcycle, Jet, Tank, Hovercraft, Cruise  
+countries, India, USA, UK, Canada, Australia, Germany, France, Japan, China, Brazil, Russia, Italy, Spain, Mexico, South Korea, Netherlands, Switzerland, Sweden, Argentina, Egypt  
+planets, Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, Moon, Sun, Ceres, Eris, Titan, Europa, Ganymede, Callisto, Io
