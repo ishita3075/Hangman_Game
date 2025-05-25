@@ -4,6 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+/**
+ * Main game window for the Hangman Game.
+ * Handles GUI layout and game logic.
+ */
 public class Hangman extends JFrame implements ActionListener {
     // counts the number of incorrect guesses player has made
     private int incorrectGuesses;
@@ -11,22 +15,25 @@ public class Hangman extends JFrame implements ActionListener {
     private String[] wordChallenge;
     private final WordDB wordDB;
     private JLabel hangmanImage, categoryLabel, hiddenWordLabel, resultLabel, wordLabel;
-    private JButton[] letterButtons;
-    private JDialog resultDialog;
-    private Font customFont;
+    private JButton[] letterButtons;       // Array of letter buttons A-Z
+    private JDialog resultDialog;          // Dialog shown on win or loss
+    private Font customFont;               // Custom game font
+
     public Hangman(){
         super("Hangman Game (Java Ed.)");
+        // The main window
         setSize(CommonConstants.FRAME_SIZE);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null);
         setResizable(false);
         getContentPane().setBackground(CommonConstants.BACKGROUND_COLOR);
-        // init vars
+        // Initialize game state and components
         wordDB = new WordDB();
         letterButtons = new JButton[26];
         wordChallenge = wordDB.loadChallenge();
         customFont = CustomTools.createFont(CommonConstants.FONT_PATH);
+        // Result dialog and UI
         createResultDialog();
         addGuiComponents();
     }
@@ -157,6 +164,8 @@ public class Hangman extends JFrame implements ActionListener {
             wordLabel.setText("Word: " + wordChallenge[1]);
         }
     }
+
+    //The result dialog shown when the game ends
     private void createResultDialog(){
         resultDialog = new JDialog();
         resultDialog.setTitle("Result");
@@ -166,18 +175,21 @@ public class Hangman extends JFrame implements ActionListener {
         resultDialog.setLocationRelativeTo(this);
         resultDialog.setModal(true);
         resultDialog.setLayout(new GridLayout(3, 1));
+        // Reset game on close
         resultDialog.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
                 resetGame();
             }
         });
+        // Result messages
         resultLabel = new JLabel();
         resultLabel.setForeground(Color.WHITE);
         resultLabel.setHorizontalAlignment(SwingConstants.CENTER);
         wordLabel = new JLabel();
         wordLabel.setForeground(Color.WHITE);
         wordLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        // Restart button
         JButton restartButton = new JButton("Restart");
         restartButton.setForeground(Color.WHITE);
         restartButton.setBackground(CommonConstants.SECONDARY_COLOR);
