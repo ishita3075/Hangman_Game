@@ -5,10 +5,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Random;
-/**
- * This class handles loading and managing word challenges for the Hangman game.
- * It reads word categories and their corresponding words from a file.
- */
 public class WordDB {
     // will contain key -> category, value -> words
     private HashMap<String, String[]> wordList;
