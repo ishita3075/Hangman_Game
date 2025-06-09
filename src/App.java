@@ -3,36 +3,30 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- * Entry point of the Hangman Game application.
- */
 public class App {
-
     public static void main(String[] args) {
-
-        // JDBC URL for MySQL database
+        // Database connection check (optional)
         String url = "jdbc:mysql://localhost:3306/Hangman";
-
-        // MySQL login credentials
         String username = "root";
         String password = "root@1234";
 
-        // Attempt to connect to the MySQL database
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            System.out.println("Connected to database"); // Print if connection succeed
-            System.out.println(connection); // Print connection object for debugging
+            System.out.println("Connected to database");
         } catch (SQLException e) {
-            System.err.println("Connection failed"); // Print if connection fails
+            System.err.println("Connection failed");
+            e.printStackTrace();
         }
 
-        // Launch GUI on Event Dispatch Thread
+        // Run GUI on Event Dispatch Thread
+        SwingUtilities.invokeLater(() -> {
+            String playerName = JOptionPane.showInputDialog(null, "Enter your name:", "Welcome to Hangman", JOptionPane.PLAIN_MESSAGE);
 
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                // Launch the Hangman game UI
-                new Hangman().setVisible(true);
+            if (playerName == null || playerName.trim().isEmpty()) {
+                playerName = "Guest";
             }
+
+            Hangman game = new Hangman(playerName.trim());
+            game.setVisible(true);
         });
     }
 }
